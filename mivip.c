@@ -26,7 +26,6 @@
 #include <string.h>
 
 unsigned char gpr[5];
-FILE *fd;
 unsigned char text[512];
 char vid[25] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
 char* regev(int pos)
@@ -131,7 +130,18 @@ int main(int argc, char **argv)
 {
 	int i = 0, running = 0;
 	char *reg, *reg1;
+	FILE *fd;
+	if (argc < 2)
+	{
+		printf("Error: No se esecificó un archivo.\n");
+		return -4;
+	}
 	fd = fopen(argv[1], "rb");
+	if (fd == NULL)
+	{
+		printf("Error: No se pudo abrir el archivo.\n");
+		return -5;
+	}
 	fread(text, sizeof(unsigned char), 512, fd);
 	while (running == 0)
 	{
@@ -203,7 +213,14 @@ int main(int argc, char **argv)
 				printf("[REG] %s = %i\n", reg, regval(i+1));
 				i = i + 2;
 			break;
+			case 0x00:
+			break;
+			case 0x11:
+				printf("[CPU] nop\n");
+			break;
 			default:
+				printf("[ERR] ¡Operación inválida!\n");
+				return -3;
 			break;
 		}
 		i++;
