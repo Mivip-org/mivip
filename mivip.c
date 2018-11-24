@@ -128,7 +128,7 @@ int arsub(int pos, int pod)
 }
 int main(int argc, char **argv)
 {
-	int i = 0, running = 0;
+	int i = 0, running = 0, pcr = 0;
 	char *reg, *reg1;
 	FILE *fd;
 	if (argc < 2)
@@ -223,6 +223,7 @@ int main(int argc, char **argv)
 				return -3;
 			break;
 		}
+		pcr++;
 		i++;
 	}
 	fclose(fd);
