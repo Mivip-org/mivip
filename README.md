@@ -20,7 +20,7 @@ git clone "https://git.code.sf.net/p/mivip/code.git mivip"
 ## Compilar
 Existen dos maneras de compilar el emulador mivip:
 - **Dinámicamente (recomendada para uso personal, predeterminada):** Al compilar mivip dinámicamente la salida del proceso de compilación es una biblioteca compartida (dll, so). Esta biblioteca puede llegar a pesar apróximadamente 12,027 KiB (12.316 bytes) y llama a la biblioteca estándar en tiempo de ejecución.
-- **Estáticamente (recomendada para distributión):** Al compilar mivip estáticamente la salida del proceso de compilación es un ejecutable (a.out, elf). Este ejecutable puede llegar a pesar 715,460 KiB (732.632 bytes), aunque esto depende de la bibliotecas con las que se haya compilado ya que están incorporadaa a él.
+- **Estáticamente (recomendada para distributión):** Al compilar mivip estáticamente la salida del proceso de compilación es un ejecutable (a.out, elf). Este ejecutable puede llegar a pesar 715,460 KiB (732.632 bytes), aunque esto depende de la bibliotecas con las que se haya compilado ya que están incorporadas a él.
 
 Para compilar el emulador de mivip ingrese uno de los siguientes comandos en su terminal preferida:
 ```sh
@@ -50,7 +50,7 @@ make install
 Esto instalará **solamente** el binario del emulador. No instalará ejemplos o asociará MIMEtypes a mivip. Tampoco crerá un lanzador en el menú de aplicaciones.
 
 ## Documentación
-Toda la documentación sobre el emulador de mivip está disponible en la [wiki de este repositorio ](https://github.com/Mivip-org/mivip/wiki). Esta documentación está disponible completamente en español (Argentina) y parcialmente en inglés (Estados Unidos).
+Toda la documentación sobre el emulador de mivip está disponible en la [wiki de este repositorio](https://github.com/Mivip-org/mivip/wiki). Esta documentación está disponible completamente en español (Argentina) y parcialmente en inglés (Estados Unidos).
 
 ## Licencia
 El emulador mivip y su código fuente para sistemas GNU/Linux está liceniado bajo la licencia GPL v2.0.
